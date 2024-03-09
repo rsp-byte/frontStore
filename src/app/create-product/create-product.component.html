@@ -1,0 +1,53 @@
+<div class="container alineacion ">
+    <form [formGroup]="formulario">
+
+        <div class="col-6 mb-3 border-top  row text-primary">
+            <div class="row mb-3">
+
+                <div class="col-2">
+                    <label>Nombre</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control " id="name" placeholder="Nombre" formControlName="name">
+                </div>
+
+            </div>
+            
+            
+            <div class="row mb-3">
+                <div class="col-2">
+                    <label>Descripcion</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control " id="description" placeholder="Descripcion" formControlName="description">
+                </div>
+            </div>   
+
+            <div class="row mb-3">
+                <div class="col-2">
+                    <label>Precio</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control " id="price" placeholder="Precio" formControlName="price">
+                </div>   
+            </div>
+    
+    
+
+            <div class="row mb-3">
+                <div class="col-2">
+                    <label>Cantidad</label>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control " id="existence" placeholder="Cantidad" formControlName="existence">
+                </div> 
+            </div>       
+
+            <div>
+                <button type="button" class="btn btn-success margin" (click)="saveProduct()">Crear producto</button>
+                <button type="button" class="btn btn-warning margin border-left-btn" (click)="cancelar()">Cancelar</button>
+            </div>
+                     
+        </div>    
+     </form>
+ </div>

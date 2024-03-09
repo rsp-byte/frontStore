@@ -1,0 +1,21 @@
+<table class="table">
+  <caption>Tabla Productos v.1.0.0.0</caption>
+    <thead>
+      <tr>
+        <th scope="col-1">#</th>
+        <th scope="col-3">Nombre</th>
+        <th scope="col-3">Descripción</th>
+        <th scope="col-3">Precio</th>
+        <th scope="col-3">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.name}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.existence}}</td>
+          </tr>
+    </tbody>
+  </table>

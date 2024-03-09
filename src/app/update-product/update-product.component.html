@@ -1,0 +1,67 @@
+<div class="container alineacion align-center">
+    <form [formGroup]="formulario">
+        <div class=" mb-6">
+            <div class="col-1">
+                <input type="text" class="form-control " id="description" placeholder="ID" formControlName="id">
+            </div>
+
+            <div let prduct class="row col-10">
+                <div >
+                    <label>ID</label>
+                </div>
+
+                <div class="col-8">
+                    <input [(ngModel)]="product.id" type="text" class="form-control " id="ida" placeholder="ID" value="{{product.id}}" formControlName="ida">
+                </div>
+
+                <div>
+                    <label>Nombre</label>
+                </div>
+
+                <div class="col-8">
+                    <input [(ngModel)]="product.name"  type="text" class="form-control " id="name" placeholder="Nombre" value="{{product.name}}" formControlName="name">
+                </div>
+
+                <div>
+                    <label>Descripción</label>
+                </div>
+
+                <div class="col-8">
+                    <input [(ngModel)]="product.description"  type="text" class="form-control " id="description" placeholder="Descripcion" value="{{product.description}}" formControlName="description">
+                </div>
+
+                <div>
+                    <label>Precio</label>
+                </div>
+
+                <div class="col-8">
+                    <input [(ngModel)]="product.price" type="text" class="form-control " id="price" placeholder="Precio" value="{{product.price}}" formControlName="price">
+                </div>
+
+                <div>
+                    <label>Cantidad</label>
+                </div>
+
+                <div class="col-8">
+                    <input [(ngModel)]="product.existence"  type="text" class="form-control " id="existence" placeholder="Cantidad" value="{{product.existence}}" formControlName="existence">
+                </div>
+            </div>
+
+
+            <div class="border-top-btn">
+                <button type="button" class="btn btn-primary margin" (click)="findByIdProduct()">Buscar id
+                </button>
+
+                <button type="button" class="btn btn-success margin border-left-btn" (click)="updateProduct()">Actualizar
+                </button>
+
+                <button type="button" class="btn btn-warning margin border-left-btn" (click)="cancelar()">Cancelar
+                </button>
+            </div>
+        </div>
+
+
+    </form>
+
+
+</div>
