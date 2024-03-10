@@ -1,21 +1,29 @@
-<table class="table">
-  <caption>Tabla Productos v.1.0.0.0</caption>
-    <thead>
-      <tr>
-        <th scope="col-1">#</th>
-        <th scope="col-3">Nombre</th>
-        <th scope="col-3">Descripción</th>
-        <th scope="col-3">Precio</th>
-        <th scope="col-3">Cantidad</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of products">
-            <th scope="row">{{p.id}}</th>
-            <td>{{p.name}}</td>
-            <td>{{p.description}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.existence}}</td>
-          </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" *ngFor="let p of products; let i = index">
+      <div class="card">
+        <div class="image-container">
+          <!-- Aquí colocamos la imagen del producto -->
+          <img src="{{ p.image }}" class="card-img-top" alt="Imagen del producto">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ p.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">ID: {{ p.id }}</h6>
+          <p class="card-text">{{ p.description }}</p>
+          <p class="card-text">Precio: {{ p.price }}</p>
+          <p class="card-text">Cantidad: {{ p.existence }}</p>
+          <!-- Área de comentarios -->
+          <div style="height: 100px; overflow-y: auto;">
+            <textarea [(ngModel)]="comentario" class="form-control mb-2" rows="3" placeholder="Escribe tu comentario aquí"></textarea>
+          </div>
+          <!-- Botón para guardar comentario -->
+          <button class="btn btn-success mr-2" (click)="saveComment(p)">Guardar Comentario</button>
+          <!-- Espacio entre botones -->
+          <div style="margin-bottom: 10px;"></div>
+          <!-- Botón para eliminar -->
+          <button class="btn btn-danger" (click)="deleteProduct(p.id)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

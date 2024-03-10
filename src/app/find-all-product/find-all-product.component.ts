@@ -8,6 +8,7 @@ import { ProductServiceService } from '../service/product-service.service';
 })
 export class FindAllProductComponent implements OnInit{
   
+  comentario: string = '';
   products: any;
 
   constructor(public productService: ProductServiceService){
@@ -21,6 +22,16 @@ export class FindAllProductComponent implements OnInit{
   this.productService.findAllProduct().subscribe(data => {
       this.products = data;
     });
+  }
+
+  async deleteProduct(index: number) {
+    console.log(index);
+    await this.productService.deleteProduct(index).subscribe();
+    this.findAllProducts()
+  }
+
+  saveComment(product: any){
+    this.productService.saveComment(product, this.comentario).subscribe();
   }
 
 }

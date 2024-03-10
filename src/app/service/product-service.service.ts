@@ -32,5 +32,19 @@ export class ProductServiceService {
   findAllProduct(){
     return this.http.get(url_base+'productos');
   }
+
+  deleteProduct(id: number){
+    return this.http.delete(url_base+'producto/'+id);
+  }
+
+  saveComment(product: any, comentario: string){
+    const headers = { 'content-type': 'application/json'}
+    const c = {
+      idProduct: product.id,
+      comment: comentario
+    }
+
+    return this.http.post<any>(url_base+ 'comentarios', c, {'headers':headers});
+  }
   
 }
